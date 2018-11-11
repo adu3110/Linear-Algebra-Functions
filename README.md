@@ -1,6 +1,6 @@
 # Linear-Algebra-Functions
 
-The purpose of this project is to create a repository of functions for commonly used algorithms used in Linear Algebra. The following functions are given:
+The purpose of this project is to create a repository of functions for commonly used algorithms in Linear Algebra. The following functions are given:
 
 1.LU factorization.
 
