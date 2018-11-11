@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-The purpose of this project is to create a repository of functions for commonly used algorithms used in Linear Algebra. The following functions are given:
+The purpose of this project is to create a repository of functions for commonly used algorithms in Linear Algebra. The following functions are given:
 
 
 1. LU factorization.
@@ -71,7 +71,7 @@ lu_A <- LUfactorization(A)
 
 A
 lu_A
-A - lu_A$L %*% lu_A$U
+norm(A - lu_A$L %*% lu_A$U, type = "F")
 ```
 
 
@@ -108,7 +108,7 @@ ldm_A <- LDMfactorization(A)
 
 A
 ldm_A
-A - ldm_A$L %*% ldm_A$D %*% t(ldm_A$M)
+norm(A - ldm_A$L %*% ldm_A$D %*% t(ldm_A$M), type = "F")
 ```
 
 ##Cholesky Factorization by LDM^T Factorization
@@ -142,7 +142,7 @@ Asym <- matrix(c(2, -1, 0, -1, 2, -1, 0, -1, 2), ncol = 3)
 cholAsym <- CholeskyFactorizationByLDM(Asym)
 Asym
 cholAsym
-Asym - cholAsym %*% t(cholAsym)
+norm(Asym - cholAsym %*% t(cholAsym), type = "F")
 ```
 
 
@@ -184,7 +184,7 @@ Asym <- matrix(c(2, -1, 0, -1, 2, -1, 0, -1, 2), ncol = 3)
 cholOutAsym <- CholeskyByOuter(Asym)
 Asym
 cholOutAsym
-Asym - cholOutAsym %*% t(cholOutAsym)
+norm(Asym - cholOutAsym %*% t(cholOutAsym), type = "F")
 ```
 
 
@@ -236,7 +236,7 @@ A <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 10), ncol = 3)
 qrhh_A <- QRfactorizationHouseholder(A)
 A
 qrhh_A
-A - qrhh_A$Q %*% qrhh_A$R
+norm(A - qrhh_A$Q %*% qrhh_A$R, type = "F")
 ```
 
 
@@ -299,7 +299,7 @@ A <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 10), ncol = 3)
 qrgiv_A <- QRfactorizationGivens(A)
 A
 qrgiv_A
-A - qrgiv_A$Q %*% qrgiv_A$R
+norm(A - qrgiv_A$Q %*% qrgiv_A$R, type = "F")
 ```
 
 
@@ -381,5 +381,5 @@ x_LS <- LeastSquareSolutionByQR(Atri, b)
 Atri
 b
 x_LS
-b - Atri %*% x_LS
+norm(b - Atri %*% x_LS, type = "2")
 ```
